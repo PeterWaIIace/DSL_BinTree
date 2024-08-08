@@ -64,26 +64,19 @@ void bt_r_print(struct bt *tree,char* wc, int wlen)
     char new_wc[new_wlen];
     snprintf(new_wc,new_wlen,"%s ",wc);
 
-    printf("%s< %i >\n",new_wc,tree->value);
-    printf("%sL:\n",new_wc);
+    printf("%svalue: %i\n",new_wc,tree->value);
     if(tree->left)
     {
+        printf("%sleft: Node {\n",new_wc);
         bt_r_print(tree->left,new_wc,new_wlen);
+        printf("%s}\n",new_wc);
     }
-    else
-    {
-        printf("%s <NIL>\n",new_wc);
-    }
-    printf("%sR:\n",new_wc);
     if(tree->right)
     {
+        printf("%sright: Node {\n",new_wc);
         bt_r_print(tree->right,new_wc,new_wlen);
+        printf("%s}\n",new_wc);
     }
-    else
-    {
-        printf("%s <NIL>\n",new_wc);
-    }
-
 }
 
 /**
@@ -96,9 +89,10 @@ void bt_r_print(struct bt *tree,char* wc, int wlen)
  *  */
 void bt_print(struct bt *tree)
 {
-    printf("\nHead:\n");
+    printf("\nTree: {\n");
     char* wc = "";
     bt_r_print(tree,wc,sizeof(wc));
+    printf("\n}\n");
 };
 
 
