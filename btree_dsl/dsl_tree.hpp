@@ -43,5 +43,6 @@ namespace BT_DSL{
         public:
             AST(tokens tkns);
             std::string emit();
+            std::string emit_iter();
     };
 }

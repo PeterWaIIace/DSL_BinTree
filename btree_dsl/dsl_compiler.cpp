@@ -2,6 +2,7 @@
 #include "dsl_tree.hpp"
 #include <iostream>
 #include <fstream>
+#include <string>
 
 std::string read_input(std::string filename)
 {
@@ -25,7 +26,7 @@ void write_output(std::string filename, std::string payload)
         return;
     }
 
-    outFile << "#include <stdio.h>\n #include \"btree.h\"\n";
+    outFile << "#include <stdio.h>\n#include \"btree.h\"\n";
     outFile << "int main(){\n";
     outFile << payload << "\n";
     outFile << "    return 0;\n";
@@ -37,7 +38,7 @@ void write_output(std::string filename, std::string payload)
 
 int main(int argc, char* argv[])
 {
-    if (argc != 3) {
+    if (argc < 3) {
         std::cerr << "Usage: " << argv[0] << " <input_file> <output_file>" << std::endl;
         return 1;
     }
@@ -51,10 +52,24 @@ int main(int argc, char* argv[])
 
     BT_DSL::AST abstract_syntax_tree(tokens);
 
-    write_output(
-        argv[2],
-        abstract_syntax_tree.emit()
-    );
+    if(argc > 3)
+    {
+        if(0 == std::string("-i").compare(argv[3]))
+        {
+            std::cout << argv[3] << std::endl;
+            write_output(
+                argv[2],
+                abstract_syntax_tree.emit_iter()
+            );
+        }
+    }
+    else
+    {
+        write_output(
+            argv[2],
+            abstract_syntax_tree.emit()
+        );
+    }
 
     return 0;
 };

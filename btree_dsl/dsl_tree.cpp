@@ -125,14 +125,18 @@ std::string BT_DSL::Tree::emit_iter(){
     std::stringstream ss;
     int index = 0;
     ss << main_node->emit_iter(0,index);
+    ss << "    bt_print(bintree);\n";
+    ss << "    bt_free(bintree);\n";
     return ss.str();
 }
 
 std::string BT_DSL::Tree::emit(){
     std::stringstream ss;
-    ss << "struct bt* tree = ";
+    ss << "    struct bt* tree = ";
     ss << main_node->emit();
-    ss << ";";
+    ss << ";\n";
+    ss << "    bt_print(tree);\n";
+    ss << "    bt_free(tree);\n";
     return ss.str();
 }
 
@@ -255,6 +259,12 @@ BT_DSL::AST::AST(tokens tkns)
 };
 
 std::string BT_DSL::AST::emit()
+{
+    return tree->emit();
+};
+
+
+std::string BT_DSL::AST::emit_iter()
 {
     return tree->emit_iter();
 };
