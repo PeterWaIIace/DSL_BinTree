@@ -1,3 +1,0 @@
-/home/wallace/Projects/binary_trees/build/CMakeFiles/program.dir
-/home/wallace/Projects/binary_trees/build/CMakeFiles/edit_cache.dir
-/home/wallace/Projects/binary_trees/build/CMakeFiles/rebuild_cache.dir

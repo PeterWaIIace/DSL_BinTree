@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/program.dir/btree.c.o CMakeFiles/program.dir/main.c.o -o /home/wallace/Projects/binary_trees/program
