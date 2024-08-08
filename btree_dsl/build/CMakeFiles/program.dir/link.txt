@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/program.dir/dsl_compiler.cpp.o CMakeFiles/program.dir/dsl_tokenizer.cpp.o CMakeFiles/program.dir/dsl_tree.cpp.o -o /home/wallace/Projects/binary_trees/btree_dsl/program

@@ -1,0 +1,29 @@
+Tree {
+    Node {
+        value: 10
+        left: Node {
+            value: 5
+            left: Node {
+                value: 2
+            }
+            right: Node {
+                value: 7
+                right: Node {
+                    value: 19
+                }
+            }
+        }
+        right: Node {
+            value: 15
+            left: Node {
+                value: 12
+                right: Node {
+                    value: 89
+                }
+            }
+            right: Node {
+                value: 20
+            }
+        }
+    }
+}
